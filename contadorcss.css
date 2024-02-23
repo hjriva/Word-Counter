@@ -1,0 +1,286 @@
+@charset "UTF-8";
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+ h1 {
+    font-size: 35pt;
+ }
+
+
+.form {
+    width: 85px;
+    height: 25px;
+    padding: 1px;
+    font-size: 15pt;
+    font-family: monospace;
+    letter-spacing: 2px;
+    text-align: center;
+    border-radius: 5px;
+    border: #737373 1px solid;
+}
+
+.subform {
+    display: inline-block;
+    margin-top: 7px;
+}
+.lbl {
+    margin-right: 150px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    vertical-align: middle;
+    margin-bottom: 2px;
+    
+    
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #737373;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #000000;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #000000;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+/* ref do botão: https://www.w3schools.com/howto/howto_css_switch.asp */
+
+#typearea {
+    margin: 2vh auto
+}
+
+#text {
+    padding: 1vh;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    font-size: 10pt
+}
+
+
+.indicador {
+    display: inline;
+    margin: 1vh 3vw 1vh 0vh;
+}
+
+
+#mostracaracteres, #mostrapalavras {
+    font-weight: bolder;
+}
+
+#indicatorarea, #formsarea {
+    font-size: 15pt;
+}
+
+#aviso {
+    margin: 2vh;
+}
+
+@media screen and (max-width: 644px)  {
+  .lbl {
+    display: block;
+    font-size: 20px;
+    padding-top: 7px;
+    margin-right: 1px;
+  }
+
+  #formsarea {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .indicador {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #text {
+    width: 65vw;
+    height: 20vw;
+  }
+
+  #aviso, #mostrapalavras, #mostracaracteres {
+    font-size: 20px;
+  }
+
+  #mostrapalavras, #mostracaracteres {
+    padding: 0px 0px 0px 5px
+  }
+    
+  }
+
+@media screen and (max-width: 645px)  {
+  body {
+    font-size: 5.5vh;
+    
+  }
+
+  
+}
+
+@media screen and (min-width: 701px) and (max-width: 1120px) {
+
+  .lbl {
+    margin-right: 5vw;
+    margin-top: 7px;
+}
+
+  #text { 
+    width: 90vw;
+   }
+}
+
+
+@media screen and (max-width: 700px) {
+    .subform {
+        display: block;
+        margin-top: 7px;
+    }
+
+   #text { 
+    width: 90vw;
+    height: 20vw;
+   }
+}
+
+
+
+@media screen  and (max-height: 618px) {
+  *{
+    font-size: 5.5vh;
+  }
+ 
+
+  .lbl {
+    margin-right: 2vw;
+    margin-top: 5px;
+}
+
+  #text {
+    width: 90vw;
+    height: 45vh ;
+   }
+
+   h1 {
+    font-size: 5vh
+   }
+
+   .form {
+    width: 33vh;
+    height: 8vh; }
+  } 
+    
+
+
+    @media screen  and (max-height: 234px) and (min-height: 208px)  {
+     
+      
+    
+
+      .form {
+        width: 85px;
+        height: 25px;
+        padding: 1px;
+        font-size: 15pt;
+        font-family: monospace;
+        letter-spacing: 2px;
+        text-align: center;
+        border-radius: 5px;
+        border: #737373 1px solid;
+    }
+
+    }
+
+    @media screen  and (max-height: 208px)  {
+      .form {
+        width: 85px;
+        height: 25px;
+        padding: 1px;
+        font-size: 15pt;
+        font-family: monospace;
+        letter-spacing: 2px;
+        text-align: center;
+        border-radius: 5px;
+        border: #737373 1px solid; }
+
+      * {
+        font-size: 15px;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+    }
+   
+@media screen and (min-height: 450px)  {
+  * {
+    font-size: 4vh;
+  }
+
+  .form {
+    padding: 0.3px;
+  }
+  
+}
+
+
+
+  

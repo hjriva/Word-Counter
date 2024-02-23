@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="1f4dd.png?" type="image/x-icon">
+    <title>Contador de palavras</title>
+    <link rel="stylesheet" href="contadorcss.css">
+</head>
+<body>
+    <div id="content">
+    <h1>Contador de palavras</h1>
+    <div id="formsarea">
+        <div class="subform">
+        <input type="number" id="wordnum" name="numberwords" class="form"> 
+        <label class="switch">
+        <input type="checkbox" id="wordoption" class="teste">  <span class="slider round"></span> </label> <label for="wordoption" class="lbl"> Limitar palavras </label>
+    </div>
+    <div class="subform">
+        <input type="number" id="characternum" name="numbercharas" class="form">
+        <label class="switch">
+        <input type="checkbox" id="characteroption" class="teste">  <span class="slider round"></span> </label> <label for="characteroption" class="lbl"> Limitar caracteres </label>
+    </div>
+    </div>
+    <div id="typearea">
+        <textarea name="texto" id="text" cols="150" rows="25" ></textarea> </div>
+        <div id="aviso">
+    </div>
+    <div id="indicatorarea">
+        <div id="palavras" class="indicador"> Nº de palavras: <span id="mostrapalavras"> </span> </div>
+        <div id="caracteres" class="indicador">Nº de caracteres: <span id="mostracaracteres"> </span> </div>
+        
+    </div>
+    
+    <script src="scriptcontador.js"></script>
+</body>
+</html>
