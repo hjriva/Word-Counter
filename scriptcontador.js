@@ -305,6 +305,32 @@ document.getElementById('characternum').addEventListener("keyup", ({key}) => {
 
 //https://stackoverflow.com/questions/7060750/detect-the-enter-key-in-a-text-input-field
 
+
+var contcheck = window.document.getElementById('contractions')
+contcheck.addEventListener('change', function ContractCheck () {
+    let wordsplit = CCheck()
+    function CCheck () {
+       
+        if (contcheck.checked) {
+            return new RegExp("[\\s,.]+")
+        } else if (contcheck.checked == false) {
+            return new RegExp("[\\s',.]+")
+        }
+    }
+    let words = window.document.getElementById('text').value
+    count = 0
+    let split = words.split(wordsplit)
+    for (let i = 0; i < split.length; i++) {
+        if (split[i] != "") {
+            count += 1;
+        }
+    }
+
+
+window.document.getElementById('mostrapalavras').innerHTML = count
+})
+
+
 //verificar enquanto digita
 
 document.getElementById('text').addEventListener('input', function Contador() {
