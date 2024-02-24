@@ -311,7 +311,20 @@ document.getElementById('text').addEventListener('input', function Contador() {
 
     let words = window.document.getElementById('text').value
     count = 0
-    let wordsplit = new RegExp("[\\s,.]+")
+
+    let wordsplit = CCheck()
+
+    function CCheck () {
+    var contcheck = window.document.getElementById('contractions')
+    if (contcheck.checked) {
+        return new RegExp("[\\s,.]+")
+    } else if (contcheck.checked == false) {
+        return new RegExp("[\\s',.]+")
+    }
+}
+ 
+
+    
     let split = words.split(wordsplit);
     
 
