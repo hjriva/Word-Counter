@@ -124,10 +124,10 @@ if (characheck.checked && wordcheck.checked) {
 } else if (subpalavras == 1 && subcharas !== 1 ) {
     window.document.getElementById('aviso').innerHTML = `You can type one more word and ${subcharas} more characters!`
 
-} else if (subpalavras !== 1 && subcharas == 1 ) (
+} else if (subpalavras !== 1 && subcharas == 1 ) {
     window.document.getElementById('aviso').innerHTML = `You can type ${subpalavras} more words and one more character!`
 
-)
+}
         
     }
 
@@ -262,10 +262,10 @@ window.document.getElementById('aviso').innerHTML = ` You can type ${subcaracter
     } else if (subpalavras == 1 && subcharas !== 1 ) {
         window.document.getElementById('aviso').innerHTML = `You can type one more word and ${subcharas} more characters!`
 
-    } else if (subpalavras !== 1 && subcharas == 1 ) (
+    } else if (subpalavras !== 1 && subcharas == 1 ) {
         window.document.getElementById('aviso').innerHTML = `You can type ${subpalavras} more words and one more character!`
 
-    )
+    }
             
         }
     
