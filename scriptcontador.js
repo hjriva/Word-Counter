@@ -25,9 +25,9 @@ const Test = function() {  if (wordcheck.checked) {
         window.document.getElementById('aviso').style.display = 'block'
         const worddiff = howmanywords - wordlimit
             if (worddiff == 1) {
-             window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais uma palavra! Quase lá!`
+             window.document.getElementById('aviso').innerHTML = `You only need to delete one more word! Almost there!`
             } else {
-            window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${worddiff} palavras`}
+            window.document.getElementById('aviso').innerHTML = `You need to delete ${worddiff} words!`}
     } 
 else if (howmanywords <= wordlimit)  { 
     window.document.getElementById('text').style.color = 'initial'
@@ -35,11 +35,11 @@ else if (howmanywords <= wordlimit)  {
     window.document.getElementById('aviso').style.display = 'block'
     const subpalavras = wordlimit - howmanywords
     if (subpalavras == 1) {
-        window.document.getElementById('aviso').innerHTML = ` Você pode digitar mais uma palavra!`
+        window.document.getElementById('aviso').innerHTML = `You can only type one last word!`
     } else if (subpalavras == 0) {
-        window.document.getElementById('aviso').innerHTML = ` Seu texto atingiu o limite de palavras estabelecido! Não pode digitar mais nenhuma palavra.`
+        window.document.getElementById('aviso').innerHTML = `You've reached your limit and you can't type any more words!`
     } else {
-    window.document.getElementById('aviso').innerHTML = ` Você pode digitar mais ${subpalavras} palavras!`}
+    window.document.getElementById('aviso').innerHTML = `You can type ${subpalavras} more words!`}
 }
 } 
 else if (characheck.checked) {
@@ -52,9 +52,9 @@ else if (characheck.checked) {
         window.document.getElementById('aviso').style.color = 'red'
         const charadiff = howmanycharas - charalimit
             if (charadiff == 1) {
-            window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais um caractere! Quase lá!`
+            window.document.getElementById('aviso').innerHTML = `You only need to delete one more character! Almost there!`
             } else {
-            window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${charadiff} caracteres!`}
+            window.document.getElementById('aviso').innerHTML = `You need to delete ${charadiff} characteres!`}
         }
 } 
 
@@ -77,9 +77,9 @@ if (characheck.checked && wordcheck.checked) {
    window.document.getElementById('aviso').style.color = 'red'
    const charadiff = howmanycharas - charalimit
    if (charadiff == 1) {
-       window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais um caractere! Quase lá!`
+       window.document.getElementById('aviso').innerHTML = `You only need to delete one more character! Almost there!`
    } else {
-   window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${charadiff} caracteres!`}
+   window.document.getElementById('aviso').innerHTML = `You need to delete ${charadiff} characteres!`}
 }
            
    
@@ -89,9 +89,9 @@ if (characheck.checked && wordcheck.checked) {
    window.document.getElementById('aviso').style.color = 'red'
    const worddiff = howmanywords - wordlimit
    if (worddiff == 1) {
-       window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais uma palavra! Quase lá!`
+       window.document.getElementById('aviso').innerHTML = `You only need to delete one more word! Almost there!`
    } else {
-   window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${worddiff} palavras`}
+   window.document.getElementById('aviso').innerHTML = `You need to delete ${worddiff} words!`}
            
    
        }
@@ -100,13 +100,13 @@ if (characheck.checked && wordcheck.checked) {
         const charadiff = howmanycharas - charalimit
         const worddiff = howmanywords - wordlimit
         if (worddiff  == 1 && charadiff == 1) {
-            window.document.getElementById('aviso').innerHTML =  `Diminuir 1 caractere e 1 palavra... Quase lá! `}
-        else if (worddiff  !== 1 && charadiff == 1)  {window.document.getElementById('aviso').innerHTML =  `Diminuir 1 caractere e ${worddiff} palavras...`}
+            window.document.getElementById('aviso').innerHTML =  ` You only need to delete one more word and one more character! Almost there! `}
+        else if (worddiff  !== 1 && charadiff == 1)  {window.document.getElementById('aviso').innerHTML =  `You need to delete ${worddiff} words and one more character!`}
         else if (worddiff  == 1 && charadiff !== 1)  {
-            window.document.getElementById('aviso').innerHTML =  `Diminuir ${charadiff} caracteres e 1 palavra... Quase!`
+            window.document.getElementById('aviso').innerHTML =  `You need to delete one more word and ${charadiff} characters!`
 
         } else if (worddiff  !== 1 && charadiff !== 1) {
-            window.document.getElementById('aviso').innerHTML =  `Diminuir ${charadiff} caracteres e ${worddiff} palavras... Quase!`
+            window.document.getElementById('aviso').innerHTML =  `You need to delete ${worddiff} words and ${charadiff} characters!`
 
         }
 
@@ -117,15 +117,15 @@ if (characheck.checked && wordcheck.checked) {
         const subcharas = charalimit - howmanycharas
         const subpalavras = wordlimit - howmanywords
         if (subpalavras == 1 && subcharas == 1) {
-            window.document.getElementById('aviso').innerHTML = `Pode digitar mais uma palavra e um caractere...`
+            window.document.getElementById('aviso').innerHTML = `You can type one more word and one more character!`
 
         } else if (subpalavras !== 1 && subcharas !== 1 ) {
-    window.document.getElementById('aviso').innerHTML = `Pode digitar mais ${subpalavras} palavras e ${subcharas} caracteres...`
+    window.document.getElementById('aviso').innerHTML = `You can type ${worddiff} more words and ${charadiff} more characters!`
 } else if (subpalavras == 1 && subcharas !== 1 ) {
-    window.document.getElementById('aviso').innerHTML = `Pode digitar mais uma palavra e ${subcharas} caracteres...`
+    window.document.getElementById('aviso').innerHTML = `You can type one more word and ${subcharas} more characters!`
 
 } else if (subpalavras !== 1 && subcharas == 1 ) (
-    window.document.getElementById('aviso').innerHTML = `Pode digitar mais ${subpalavras} palavras e um caractere...`
+    window.document.getElementById('aviso').innerHTML = `You can type ${subpalavras} more words and one more character!`
 
 )
         
@@ -148,21 +148,21 @@ characheck.addEventListener('change', function TestChara() {
     window.document.getElementById('aviso').style.display = 'block'
     const charadiff = howmanycharas - charalimit
     if (charadiff == 1) {
-        window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais um caractere! Quase lá!`
+        window.document.getElementById('aviso').innerHTML = ` You only need to delete one more character! Almost there!`
     } else {
-    window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${charadiff} caracteres!`}
+    window.document.getElementById('aviso').innerHTML = ` You need to delete ${charadiff} characteres!`}
     }
  else if (howmanycharas <= charalimit)  { 
     window.document.getElementById('text').style.color = 'initial'
     window.document.getElementById('aviso').style.color = 'green'
     window.document.getElementById('aviso').style.display = 'block'
 const subcharas = charalimit - howmanycharas
-	 if (subcharas == 1) {  window.document.getElementById('aviso').innerHTML = ` Você pode digitar mais um caractere!`}
+	 if (subcharas == 1) {  window.document.getElementById('aviso').innerHTML = ` You can type one last character!`}
  else if (subcharas == 0) {
- window.document.getElementById('aviso').innerHTML = ` Seu texto atingiu o limite de caracteres estabelecido! Não pode digitar mais nenhum caractere.`
+ window.document.getElementById('aviso').innerHTML = ` You've reached your limit and you can't type any more characters!`
 
 } else { 
-window.document.getElementById('aviso').innerHTML = ` Você pode digitar mais ${subcharas} caracteres!`
+window.document.getElementById('aviso').innerHTML = ` You can type ${subcaracteres} more characters!`
 }   
 
 
@@ -182,9 +182,9 @@ window.document.getElementById('aviso').innerHTML = ` Você pode digitar mais ${
         window.document.getElementById('aviso').style.color = 'red'
         const worddiff = howmanywords - wordlimit
         if (worddiff == 1) {
-            window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais uma palavra! Quase lá!`
+            window.document.getElementById('aviso').innerHTML = ` You only need to delete one more word! Almost there!`
         } else {
-        window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${worddiff} palavras`}
+        window.document.getElementById('aviso').innerHTML = ` You need to delete ${worddiff} words!`}
         }
         
 
@@ -212,9 +212,9 @@ window.document.getElementById('aviso').innerHTML = ` Você pode digitar mais ${
        window.document.getElementById('aviso').style.color = 'red'
        const charadiff = howmanycharas - charalimit
        if (charadiff == 1) {
-           window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais um caractere! Quase lá!`
+           window.document.getElementById('aviso').innerHTML = ` You only need to delete one more character! Almost there!`
        } else {
-       window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${charadiff} caracteres!`}
+       window.document.getElementById('aviso').innerHTML = ` You need to delete ${charadiff} characteres!`}
    }
                
        
@@ -224,9 +224,9 @@ window.document.getElementById('aviso').innerHTML = ` Você pode digitar mais ${
        window.document.getElementById('aviso').style.color = 'red'
        const worddiff = howmanywords - wordlimit
        if (worddiff == 1) {
-           window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais uma palavra! Quase lá!`
+           window.document.getElementById('aviso').innerHTML = ` You only need to delete one more word! Almost there!`
        } else {
-       window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${worddiff} palavras`}
+       window.document.getElementById('aviso').innerHTML = ` You need to delete ${worddiff} words!`}
                
        
            }
@@ -237,13 +237,13 @@ window.document.getElementById('aviso').innerHTML = ` Você pode digitar mais ${
             const worddiff = howmanywords - wordlimit
            
             if (worddiff  == 1 && charadiff == 1) {
-                window.document.getElementById('aviso').innerHTML =  `Diminuir 1 caractere e 1 palavra... Quase lá! `}
-            else if (worddiff  !== 1 && charadiff == 1)  {window.document.getElementById('aviso').innerHTML =  `Diminuir 1 caractere e ${worddiff} palavras...`}
+                window.document.getElementById('aviso').innerHTML =  ` You only need to delete one more word and one more character! Almost there! `}
+            else if (worddiff  !== 1 && charadiff == 1)  {window.document.getElementById('aviso').innerHTML =  `You need to delete ${worddiff} words and one more character!`}
             else if (worddiff  == 1 && charadiff !== 1)  {
-                window.document.getElementById('aviso').innerHTML =  `Diminuir ${charadiff} caracteres e 1 palavra... Quase!`
+                window.document.getElementById('aviso').innerHTML =  `You need to delete one more word and ${charadiff} characters!`
 
             } else if (worddiff  !== 1 && charadiff !== 1) {
-                window.document.getElementById('aviso').innerHTML =  `Diminuir ${charadiff} caracteres e ${worddiff} palavras... Quase!`
+                window.document.getElementById('aviso').innerHTML =  `You need to delete ${worddiff} words and ${charadiff} characters!`
  
             }
         
@@ -255,15 +255,15 @@ window.document.getElementById('aviso').innerHTML = ` Você pode digitar mais ${
             const subcharas = charalimit - howmanycharas
             const subpalavras = wordlimit - howmanywords
             if (subpalavras == 1 && subcharas == 1) {
-                window.document.getElementById('aviso').innerHTML = `Pode digitar mais uma palavra e um caractere...`
+                window.document.getElementById('aviso').innerHTML = `You can type one more word and one more character!`
 
             } else if (subpalavras !== 1 && subcharas !== 1 ) {
-        window.document.getElementById('aviso').innerHTML = `Pode digitar mais ${subpalavras} palavras e ${subcharas} caracteres...`
+        window.document.getElementById('aviso').innerHTML = `You can type ${worddiff} more words and ${charadiff} more characters!`
     } else if (subpalavras == 1 && subcharas !== 1 ) {
-        window.document.getElementById('aviso').innerHTML = `Pode digitar mais uma palavra e ${subcharas} caracteres...`
+        window.document.getElementById('aviso').innerHTML = `You can type one more word and ${subcharas} more characters!`
 
     } else if (subpalavras !== 1 && subcharas == 1 ) (
-        window.document.getElementById('aviso').innerHTML = `Pode digitar mais ${subpalavras} palavras e um caractere...`
+        window.document.getElementById('aviso').innerHTML = `You can type ${subpalavras} more words and one more character!`
 
     )
             
@@ -395,9 +395,9 @@ document.getElementById('text').addEventListener('input', function Contador() {
             window.document.getElementById('aviso').style.color = 'red'
             const worddiff = count - wordlimit
             if (worddiff == 1) {
-                window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais uma palavra! Quase lá!`
+                window.document.getElementById('aviso').innerHTML = ` You only need to delete one more word! Almost there!`
             } else {
-            window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${worddiff} palavras`}
+            window.document.getElementById('aviso').innerHTML = ` You need to delete ${worddiff} words!`}
             
     
         } else if (count <= wordlimit) {
@@ -406,11 +406,11 @@ document.getElementById('text').addEventListener('input', function Contador() {
             window.document.getElementById('aviso').style.color = 'green'
             const subpalavras = wordlimit - count
             if (subpalavras == 1) {
-                window.document.getElementById('aviso').innerHTML = `Você só pode digitar mais uma palavra!`
+                window.document.getElementById('aviso').innerHTML = `You can only type one last word!`
             } else if (subpalavras == 0 ) {
-                window.document.getElementById('aviso').innerHTML = `Você atingiu seu limite e não pode digitar mais nenhuma palavra!`
+                window.document.getElementById('aviso').innerHTML = `You've reached your limit and you can't type any more words!`
             } else {
-            window.document.getElementById('aviso').innerHTML = `Você ainda pode digitar ${subpalavras} palavras!`}
+            window.document.getElementById('aviso').innerHTML = `You can type ${subpalavras} more words!`}
         }       
     } else 
     
@@ -422,9 +422,9 @@ document.getElementById('text').addEventListener('input', function Contador() {
             window.document.getElementById('aviso').style.color = 'red'
             const charadiff = words.length - charalimit
             if (charadiff == 1) {
-                window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais um caractere! Quase lá!`
+                window.document.getElementById('aviso').innerHTML = ` You only need to delete one more character! Almost there!`
             } else {
-            window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${charadiff} caracteres`}
+            window.document.getElementById('aviso').innerHTML = ` You need to delete ${charadiff} characteres`}
             
     
         } else {
@@ -432,7 +432,9 @@ document.getElementById('text').addEventListener('input', function Contador() {
             window.document.getElementById('aviso').style.display = 'block'
             window.document.getElementById('aviso').style.color = 'green'
             const subcaracteres = charalimit - words.length 
-            if (subcaracteres == 1) { window.document.getElementById('aviso').innerHTML = `Você só pode digitar mais um caractere!` } else if (subcaracteres == 0 ) { window.document.getElementById('aviso').innerHTML = `Você atingiu seu limite e não pode digitar mais nenhum caractere!` } else { window.document.getElementById('aviso').innerHTML = `Você ainda pode digitar ${subcaracteres} caracteres!`}
+            if (subcaracteres == 1) { window.document.getElementById('aviso').innerHTML = `You can only type one last character` } 
+            else if (subcaracteres == 0 ) { window.document.getElementById('aviso').innerHTML = `You've reached your limit and you can't type any more characters!` 
+        } else { window.document.getElementById('aviso').innerHTML = `You can type ${subcaracteres} characters!`}
 
         }      
          
@@ -445,9 +447,9 @@ document.getElementById('text').addEventListener('input', function Contador() {
             window.document.getElementById('aviso').style.color = 'red'
             const charadiff = words.length - charalimit
             if (charadiff == 1) {
-                window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais um caractere! Quase lá!`
+                window.document.getElementById('aviso').innerHTML = `You only need to delete one more character! Almost there!`
             } else {
-            window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${charadiff} caracteres`}
+            window.document.getElementById('aviso').innerHTML = `You need to delete ${charadiff} characteres`}
             
     
             } else if (count > wordlimit && words.length <= charalimit) {
@@ -456,15 +458,15 @@ document.getElementById('text').addEventListener('input', function Contador() {
             window.document.getElementById('aviso').style.color = 'red'
             const worddiff = count - wordlimit
             if (worddiff == 1) {
-                window.document.getElementById('aviso').innerHTML = ` Precisa diminuir só mais uma palavra! Quase lá!`
+                window.document.getElementById('aviso').innerHTML = `You only need to delete one more word! Almost there!`
             } else {
-            window.document.getElementById('aviso').innerHTML = ` Precisa diminuir ${worddiff} palavras`}
+            window.document.getElementById('aviso').innerHTML = `You need to delete ${worddiff} words!`}
             
     
         } else if (count > wordlimit && words.length > charalimit) {
             const charadiff = words.length - charalimit
             const worddiff = count - wordlimit
-            window.document.getElementById('aviso').innerHTML = `Precisa diminuir ${worddiff} palavras e ${charadiff} caracteres!`
+            window.document.getElementById('aviso').innerHTML = `You need to delete ${worddiff} words and ${charadiff} characteres!`
         }
         else {
             window.document.getElementById('text').style.color = 'initial'
@@ -472,7 +474,7 @@ document.getElementById('text').addEventListener('input', function Contador() {
             window.document.getElementById('aviso').style.color = 'green'
             const subpalavras = wordlimit - count
             const subcaracteres = charalimit - words.length 
-            window.document.getElementById('aviso').innerHTML = ` Você pode digitar ${subpalavras} palavras e ${subcaracteres} caracteres`
+            window.document.getElementById('aviso').innerHTML = ` You can type ${subpalavras} words and ${subcaracteres} characters!`
      }   
     
     
