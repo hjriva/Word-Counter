@@ -84,7 +84,7 @@ if (characheck.checked && wordcheck.checked) {
            
    
         else if (howmanywords > wordlimit && howmanycharas <= charalimit) {
-            window.document.getElementById('text').style.color = 'red'
+    window.document.getElementById('text').style.color = 'red'
    window.document.getElementById('aviso').style.display = 'block'
    window.document.getElementById('aviso').style.color = 'red'
    const worddiff = howmanywords - wordlimit
@@ -131,9 +131,9 @@ if (characheck.checked && wordcheck.checked) {
         
     }
 
-   }
+   } 
 
-} 
+}
 
 wordcheck.addEventListener('change', Test) 
 
