@@ -15,7 +15,7 @@ var characheck = window.document.getElementById('characteroption')
 
 //para o caso de digitar e então restringir
 
-const Test = function() {  if (wordcheck.checked) {
+const ContaPalavras = function() {  if (wordcheck.checked) {
     var palavras = window.document.getElementById('mostrapalavras').innerText
     var howmanywords = Number(palavras)
     const wordlimit = Number(window.document.getElementById('wordnum').value)
@@ -133,11 +133,15 @@ if (characheck.checked && wordcheck.checked) {
 
    } 
 
+   if (characheck.checked && wordcheck.checked == false) {
+    ContaCaracteres()
+   }
+
+
+
 }
 
-wordcheck.addEventListener('change', Test) 
-
-characheck.addEventListener('change', function TestChara() {
+const ContaCaracteres = function TestChara() {
     if (characheck.checked) {
     var caracteres = window.document.getElementById('mostracaracteres').innerText
     var howmanycharas = Number(caracteres)
@@ -274,12 +278,16 @@ window.document.getElementById('aviso').innerHTML = ` You can type ${subcaracter
 
        }
      
-       
+       if (wordcheck.checked && characheck.checked == false) {
+        ContaPalavras()
+       } 
 
    }
 
-  
-) 
+wordcheck.addEventListener('change', ContaPalavras) 
+characheck.addEventListener('change', ContaCaracteres)
+
+
 
 document.getElementById('wordnum').addEventListener('focus', function() {
     if (wordcheck.checked) {
@@ -334,7 +342,7 @@ contcheck.addEventListener('change', function ContractCheck () {
 window.document.getElementById('mostrapalavras').innerHTML = count
 
 if (wordcheck.checked) {
-    Test()
+    ContaPalavras()
 }
 
 })
@@ -383,108 +391,11 @@ document.getElementById('text').addEventListener('input', function Contador() {
     const wordlimit = Number(window.document.getElementById('wordnum').value)
     const charalimit = Number(window.document.getElementById('characternum').value)
 
-    
+    ContaPalavras()
+    ContaCaracteres()
 
 
-    if (wordcheck.checked) { 
-        
-    
-        if (count > wordlimit) {
-            window.document.getElementById('text').style.color = 'red'
-            window.document.getElementById('aviso').style.display = 'block'
-            window.document.getElementById('aviso').style.color = 'red'
-            const worddiff = count - wordlimit
-            if (worddiff == 1) {
-                window.document.getElementById('aviso').innerHTML = ` You only need to delete one more word! Almost there!`
-            } else {
-            window.document.getElementById('aviso').innerHTML = ` You need to delete ${worddiff} words!`}
-            
-    
-        } else if (count <= wordlimit) {
-            window.document.getElementById('text').style.color = 'initial'
-            window.document.getElementById('aviso').style.display = 'block'
-            window.document.getElementById('aviso').style.color = 'green'
-            const subpalavras = wordlimit - count
-            if (subpalavras == 1) {
-                window.document.getElementById('aviso').innerHTML = `You can only type one last word!`
-            } else if (subpalavras == 0 ) {
-                window.document.getElementById('aviso').innerHTML = `You've reached your limit and you can't type any more words!`
-            } else {
-            window.document.getElementById('aviso').innerHTML = `You can type ${subpalavras} more words!`}
-        }       
-    } else 
-    
-
-    if (characheck.checked) { 
-        if (words.length > charalimit) {
-            window.document.getElementById('text').style.color = 'red'
-            window.document.getElementById('aviso').style.display = 'block'
-            window.document.getElementById('aviso').style.color = 'red'
-            const charadiff = words.length - charalimit
-            if (charadiff == 1) {
-                window.document.getElementById('aviso').innerHTML = ` You only need to delete one more character! Almost there!`
-            } else {
-            window.document.getElementById('aviso').innerHTML = ` You need to delete ${charadiff} characteres`}
-            
-    
-        } else {
-            window.document.getElementById('text').style.color = 'initial'
-            window.document.getElementById('aviso').style.display = 'block'
-            window.document.getElementById('aviso').style.color = 'green'
-            const subcaracteres = charalimit - words.length 
-            if (subcaracteres == 1) { window.document.getElementById('aviso').innerHTML = `You can only type one last character` } 
-            else if (subcaracteres == 0 ) { window.document.getElementById('aviso').innerHTML = `You've reached your limit and you can't type any more characters!` 
-        } else { window.document.getElementById('aviso').innerHTML = `You can type ${subcaracteres} characters!`}
-
-        }      
-         
-    }
-    
-    if (wordcheck.checked && characheck.checked) { 
-        if (words.length > charalimit && count <= wordlimit) {
-            window.document.getElementById('text').style.color = 'red'
-            window.document.getElementById('aviso').style.display = 'block'
-            window.document.getElementById('aviso').style.color = 'red'
-            const charadiff = words.length - charalimit
-            if (charadiff == 1) {
-                window.document.getElementById('aviso').innerHTML = `You only need to delete one more character! Almost there!`
-            } else {
-            window.document.getElementById('aviso').innerHTML = `You need to delete ${charadiff} characteres`}
-            
-    
-            } else if (count > wordlimit && words.length <= charalimit) {
-            window.document.getElementById('text').style.color = 'red'
-            window.document.getElementById('aviso').style.display = 'block'
-            window.document.getElementById('aviso').style.color = 'red'
-            const worddiff = count - wordlimit
-            if (worddiff == 1) {
-                window.document.getElementById('aviso').innerHTML = `You only need to delete one more word! Almost there!`
-            } else {
-            window.document.getElementById('aviso').innerHTML = `You need to delete ${worddiff} words!`}
-            
-    
-        } else if (count > wordlimit && words.length > charalimit) {
-            const charadiff = words.length - charalimit
-            const worddiff = count - wordlimit
-            window.document.getElementById('aviso').innerHTML = `You need to delete ${worddiff} words and ${charadiff} characteres!`
-        }
-        else {
-            window.document.getElementById('text').style.color = 'initial'
-            window.document.getElementById('aviso').style.display = 'block'
-            window.document.getElementById('aviso').style.color = 'green'
-            const subpalavras = wordlimit - count
-            const subcaracteres = charalimit - words.length 
-            window.document.getElementById('aviso').innerHTML = ` You can type ${subpalavras} words and ${subcaracteres} characters!`
-     }   
-    
-    
-
-    }
-
-   
-}
-
-    )
+})
 
     // https://stackoverflow.com/questions/14544104/checkbox-check-event-listener */
 

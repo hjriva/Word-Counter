@@ -23,6 +23,10 @@
     border: #737373 1px solid;
 }
 
+#cont {
+  margin: 10px 5px;
+}
+
 .subform {
     display: inline-block;
     margin-top: 7px;
@@ -148,8 +152,12 @@
   .indicador {
     font-size: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+  }
+
+  #cont {
+    margin: 3px;
   }
 
   #text {
@@ -173,6 +181,7 @@
     
   }
 
+  
   
 }
 
