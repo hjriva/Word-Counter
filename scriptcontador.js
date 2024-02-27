@@ -131,6 +131,11 @@ if (characheck.checked && wordcheck.checked) {
         
     }
 
+    else if (howmanywords == wordlimit && howmanycharas < charalimit)  {
+        const subcharas = charalimit - howmanycharas
+        window.document.getElementById('aviso').innerHTML = `You've reached your limit and you can't type any more words, but you can type ${subcharas} characteres.`
+    }
+
    } 
 
    if (characheck.checked && wordcheck.checked == false) {
@@ -273,9 +278,12 @@ window.document.getElementById('aviso').innerHTML = ` You can type ${subcaracter
             
         }
     
-
+        else if (howmanywords == wordlimit && howmanycharas < charalimit)  {
+            const subcharas = charalimit - howmanycharas
+            window.document.getElementById('aviso').innerHTML = `You've reached your limit and you can't type any more words, but you can type ${subcharas} characteres.`
+        }
        
-
+        
        }
      
        if (wordcheck.checked && characheck.checked == false) {
