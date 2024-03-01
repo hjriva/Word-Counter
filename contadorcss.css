@@ -23,10 +23,6 @@
     border: #737373 1px solid;
 }
 
-#cont {
-  margin: 10px 5px;
-}
-
 .subform {
     display: inline-block;
     margin-top: 7px;
@@ -102,6 +98,18 @@
     border-radius: 50%;
   }
 
+  #cont {
+    margin: 5px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3px;
+    align-items: baseline;
+    
+    
+    
+    
+  }
+
 /* ref do botão: https://www.w3schools.com/howto/howto_css_switch.asp */
 
 #typearea {
@@ -112,7 +120,8 @@
     padding: 1vh;
     letter-spacing: 1px;
     border-radius: 5px;
-    font-size: 10pt
+    font-size: 10pt;
+    height: 330px;
 }
 
 
@@ -152,12 +161,8 @@
   .indicador {
     font-size: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-  }
-
-  #cont {
-    margin: 3px;
   }
 
   #text {
@@ -182,7 +187,6 @@
   }
 
   
-  
 }
 
 @media screen and (min-width: 701px) and (max-width: 1120px) {
@@ -194,7 +198,7 @@
 
   #text { 
     width: 90vw;
-   }
+  }
 }
 
 
@@ -232,9 +236,7 @@
     font-size: 5vh
    }
 
-   .form {
-    width: 33vh;
-    height: 8vh; }
+   
   } 
     
 
@@ -287,7 +289,8 @@
   .form {
     padding: 0.3px;
   }
-  
+
+
 }
 
 

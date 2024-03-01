@@ -365,10 +365,11 @@ contcheck.addEventListener('change', function ContractCheck () {
         }   
     }
 
-
-window.document.getElementById('mostrapalavras').innerHTML = count
+if (count > 0) {
+window.document.getElementById('mostrapalavras').innerHTML = count}
 
 if (wordcheck.checked) {
+    
     ContaPalavras()
 }
 
