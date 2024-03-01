@@ -15,7 +15,8 @@ var characheck = window.document.getElementById('characteroption')
 
 //para o caso de digitar e então restringir
 
-const ContaPalavras = function() {  if (wordcheck.checked) {
+const ContaPalavras = function() {  
+    if (wordcheck.checked) {
     var palavras = window.document.getElementById('mostrapalavras').innerText
     var howmanywords = Number(palavras)
     const wordlimit = Number(window.document.getElementById('wordnum').value)
@@ -56,6 +57,24 @@ else if (characheck.checked) {
             } else {
             window.document.getElementById('aviso').innerHTML = `You need to delete ${charadiff} characteres!`}
         }
+        else if (howmanycharas <= charalimit)  { 
+            window.document.getElementById('text').style.color = 'initial'
+            window.document.getElementById('aviso').style.color = 'green'
+            window.document.getElementById('aviso').style.display = 'block'
+        const subcharas = charalimit - howmanycharas
+             if (subcharas == 1) {  window.document.getElementById('aviso').innerHTML = ` You can type one last character!`}
+         else if (subcharas == 0) {
+         window.document.getElementById('aviso').innerHTML = ` You've reached your limit and you can't type any more characters!`
+        
+        } else { 
+        window.document.getElementById('aviso').innerHTML = ` You can type ${subcharas} more characters!`
+        }   
+        
+        
+         
+        }
+
+
 } 
 
 else { 
@@ -110,7 +129,8 @@ if (characheck.checked && wordcheck.checked) {
 
         }
 
-    } else if (howmanycharas < charalimit && howmanywords < wordlimit) {
+    } 
+    else if (howmanycharas < charalimit && howmanywords < wordlimit) {
         window.document.getElementById('text').style.color = 'initial'
         window.document.getElementById('aviso').style.color = 'green'
         window.document.getElementById('aviso').style.display = 'block'
@@ -120,7 +140,7 @@ if (characheck.checked && wordcheck.checked) {
             window.document.getElementById('aviso').innerHTML = `You can type one more word and one more character!`
 
         } else if (subpalavras !== 1 && subcharas !== 1 ) {
-    window.document.getElementById('aviso').innerHTML = `You can type ${worddiff} more words and ${charadiff} more characters!`
+    window.document.getElementById('aviso').innerHTML = `You can type ${subpalavras} more words and ${subcharas} more characters!`
 } else if (subpalavras == 1 && subcharas !== 1 ) {
     window.document.getElementById('aviso').innerHTML = `You can type one more word and ${subcharas} more characters!`
 
@@ -138,14 +158,13 @@ if (characheck.checked && wordcheck.checked) {
 
    } 
 
-   if (characheck.checked && wordcheck.checked == false) {
-    ContaCaracteres()
-   }
+   //if (characheck.checked && wordcheck.checked == false) {ContaCaracteres()}
 
 
 
 }
 
+/*
 const ContaCaracteres = function TestChara() {
     if (characheck.checked) {
     var caracteres = window.document.getElementById('mostracaracteres').innerText
@@ -171,7 +190,7 @@ const subcharas = charalimit - howmanycharas
  window.document.getElementById('aviso').innerHTML = ` You've reached your limit and you can't type any more characters!`
 
 } else { 
-window.document.getElementById('aviso').innerHTML = ` You can type ${subcaracteres} more characters!`
+window.document.getElementById('aviso').innerHTML = ` You can type ${subcharas} more characters!`
 }   
 
 
@@ -290,10 +309,10 @@ window.document.getElementById('aviso').innerHTML = ` You can type ${subcaracter
         ContaPalavras()
        } 
 
-   }
+   }*/
 
 wordcheck.addEventListener('change', ContaPalavras) 
-characheck.addEventListener('change', ContaCaracteres)
+characheck.addEventListener('change', ContaPalavras)
 
 
 
@@ -400,7 +419,7 @@ document.getElementById('text').addEventListener('input', function Contador() {
     const charalimit = Number(window.document.getElementById('characternum').value)
 
     ContaPalavras()
-    ContaCaracteres()
+    //ContaCaracteres()
 
 
 })
